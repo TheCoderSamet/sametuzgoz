@@ -1,7 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: "export",
+  trailingSlash: true,
+  basePath: "/sametuzgoz",
+  assetPrefix: "/sametuzgoz/",
+  images: {
+    unoptimized: true,
+  },
 };
 
 export default nextConfig;
