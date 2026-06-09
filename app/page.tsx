@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import ViewCounter from "@/components/ViewCounter";
 
 type ModalId = "academic" | "cyber" | "machine-learning" | null;
 
@@ -152,9 +153,13 @@ export default function Home() {
                   <span className="initialSurname">ZGZ</span>
                 </div>
 
-                <div className="visualInfo">
-                  <p>Based in</p>
-                  <strong>Melbourne, AU</strong>
+                <div className="visualMeta">
+                  <div className="visualInfo">
+                    <p>Based in</p>
+                    <strong>Melbourne, AU</strong>
+                  </div>
+
+                  <ViewCounter />
                 </div>
               </div>
             </div>

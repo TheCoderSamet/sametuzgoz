@@ -245,14 +245,25 @@ a {
   margin-left: 13px;
 }
 
-.visualInfo {
+.visualMeta {
   position: absolute;
   left: 43px;
+  right: 43px;
   bottom: 47px;
   z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
 }
 
-.visualInfo p {
+.visualInfo,
+.visualCounter {
+  min-width: 0;
+}
+
+.visualInfo p,
+.visualCounter p {
   color: var(--muted);
   font-size: 12px;
   margin-bottom: 8px;
@@ -260,8 +271,13 @@ a {
   letter-spacing: 1.5px;
 }
 
-.visualInfo strong {
+.visualInfo strong,
+.visualCounter strong {
   font-size: 18px;
+}
+
+.visualCounter {
+  text-align: right;
 }
 
 /* General Sections */
@@ -840,8 +856,9 @@ a {
     margin-left: 9px;
   }
 
-  .visualInfo {
+  .visualMeta {
     left: 30px;
+    right: 30px;
     bottom: 34px;
   }
 

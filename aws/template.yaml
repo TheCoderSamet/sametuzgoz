@@ -1,0 +1,72 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: Portfolio view counter API
+
+Globals:
+  Function:
+    Timeout: 10
+    Runtime: nodejs20.x
+    Architectures:
+      - arm64
+
+Resources:
+  ViewsTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: portfolio-views
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: S
+      KeySchema:
+        - AttributeName: id
+          KeyType: HASH
+
+  ViewCounterFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: view-counter/
+      Handler: handler.handler
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref ViewsTable
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref ViewsTable
+      Events:
+        GetViews:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref ViewCounterApi
+            Path: /views
+            Method: GET
+        PostViews:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref ViewCounterApi
+            Path: /views
+            Method: POST
+        OptionsViews:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref ViewCounterApi
+            Path: /views
+            Method: OPTIONS
+
+  ViewCounterApi:
+    Type: AWS::Serverless::HttpApi
+    Properties:
+      CorsConfiguration:
+        AllowOrigins:
+          - "*"
+        AllowMethods:
+          - GET
+          - POST
+          - OPTIONS
+        AllowHeaders:
+          - Content-Type
+
+Outputs:
+  ViewCounterApiUrl:
+    Description: API endpoint for the portfolio view counter
+    Value: !Sub "https://${ViewCounterApi}.execute-api.${AWS::Region}.amazonaws.com/views"
