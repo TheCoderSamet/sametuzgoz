@@ -211,38 +211,22 @@ a {
   border-bottom: 1px solid var(--accent);
 }
 
-/* S / ZGZ Logo */
+.profilePhoto {
+  object-fit: cover;
+  object-position: center top;
+}
 
-.initials {
+.profilePhotoOverlay {
   position: absolute;
   inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: rgba(208, 255, 75, 0.16);
-  font-weight: 800;
-  text-align: center;
-  transform: translateY(-20px);
-}
-
-.initials span {
-  display: block;
-}
-
-.initialLetter {
-  font-size: 208px;
-  line-height: 0.72;
-  letter-spacing: -12px;
-  margin-left: -12px;
-}
-
-.initialSurname {
-  font-size: 57px;
-  line-height: 1;
-  letter-spacing: 13px;
-  margin-top: 18px;
-  margin-left: 13px;
+  z-index: 0;
+  background: linear-gradient(
+    to top,
+    rgba(11, 13, 18, 0.92) 0%,
+    rgba(11, 13, 18, 0.35) 38%,
+    transparent 62%
+  );
+  pointer-events: none;
 }
 
 .visualMeta {
@@ -837,23 +821,6 @@ a {
 
   .visualBorder {
     height: 360px;
-  }
-
-  .initials {
-    transform: translateY(-16px);
-  }
-
-  .initialLetter {
-    font-size: 150px;
-    letter-spacing: -8px;
-    margin-left: -8px;
-  }
-
-  .initialSurname {
-    font-size: 44px;
-    letter-spacing: 9px;
-    margin-top: 14px;
-    margin-left: 9px;
   }
 
   .visualMeta {

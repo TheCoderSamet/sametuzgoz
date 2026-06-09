@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import ViewCounter from "@/components/ViewCounter";
 
@@ -148,10 +149,16 @@ export default function Home() {
 
             <div className="heroVisual">
               <div className="visualBorder">
-                <div className="initials">
-                  <span className="initialLetter">S</span>
-                  <span className="initialSurname">ZGZ</span>
-                </div>
+                <Image
+                  src="/samet-profile.png"
+                  alt="Samet Uzgoz"
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 100vw, 395px"
+                  className="profilePhoto"
+                />
+
+                <div className="profilePhotoOverlay" aria-hidden="true" />
 
                 <div className="visualMeta">
                   <div className="visualInfo">
