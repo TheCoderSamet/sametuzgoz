@@ -4,7 +4,13 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import ViewCounter from "@/components/ViewCounter";
 
-type ModalId = "academic" | "cyber" | "machine-learning" | null;
+type ModalId =
+  | "academic"
+  | "cyber"
+  | "machine-learning"
+  | "web-development"
+  | "ux-ui"
+  | null;
 
 const skills = [
   "HTML & CSS",
@@ -29,8 +35,24 @@ const projectCards = [
       "Selected mobile application and software projects developed during my IT learning journey.",
   },
   {
-    id: "cyber" as const,
+    id: "web-development" as const,
     number: "02",
+    title: "Web Development",
+    type: "PORTFOLIO & FRONT-END",
+    description:
+      "Personal portfolio website built with React and Next.js, covering page structure, components, styling, modals and responsive layout.",
+  },
+  {
+    id: "ux-ui" as const,
+    number: "03",
+    title: "User Interface & UX/UI Design",
+    type: "UX/UI DESIGN",
+    description:
+      "Academic work focused on user interface design, user experience thinking, page layout, navigation and creating a modern, user-friendly web experience.",
+  },
+  {
+    id: "cyber" as const,
+    number: "04",
     title: "Cyber Security",
     type: "SECURITY PRACTICE",
     description:
@@ -38,7 +60,7 @@ const projectCards = [
   },
   {
     id: "machine-learning" as const,
-    number: "03",
+    number: "05",
     title: "Machine Learning",
     type: "DATA & AI",
     description:
@@ -232,7 +254,7 @@ export default function Home() {
             <div className="sectionTop">
               <div>
                 <p className="sectionLabel">PROJECTS</p>
-                <h2>Selected Projects</h2>
+                <h2>Project and Academic Summary</h2>
               </div>
 
               <a
@@ -495,6 +517,97 @@ export default function Home() {
                       <li>Interpreted confusion matrix results and model performance.</li>
                     </ul>
                   </div>
+                </div>
+              </div>
+            )}
+
+            {activeModal === "ux-ui" && (
+              <div className="modalBody">
+                <p className="modalLabel">UX/UI DESIGN</p>
+                <h2>User Interface &amp; UX/UI Design</h2>
+                <p className="modalIntro">
+                  Academic work focused on designing clear, user-friendly interfaces
+                  and thinking about how visitors move through a website with comfort
+                  and clarity.
+                </p>
+
+                <div className="modalColumns">
+                  <div className="modalPanel">
+                    <h3>User Experience</h3>
+                    <ul>
+                      <li>Designed user interfaces with readability and usability in mind.</li>
+                      <li>Considered user experience when planning content and interactions.</li>
+                      <li>Built a user-friendly web experience across key portfolio sections.</li>
+                    </ul>
+                  </div>
+
+                  <div className="modalPanel">
+                    <h3>Layout &amp; Visual Design</h3>
+                    <ul>
+                      <li>Structured page layout, navigation and section hierarchy.</li>
+                      <li>Organised content flow between About, Education, Skills, Projects and Contact.</li>
+                      <li>Applied modern, clean interface design principles throughout the site.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {activeModal === "web-development" && (
+              <div className="modalBody">
+                <p className="modalLabel">PORTFOLIO &amp; FRONT-END</p>
+                <h2>Web Development</h2>
+                <p className="modalIntro">
+                  Academic and practical work focused on building this personal
+                  portfolio website, from page structure and components to styling,
+                  interactivity and published project content.
+                </p>
+
+                <div className="modalColumns">
+                  <div className="modalPanel">
+                    <h3>Structure &amp; Components</h3>
+                    <ul>
+                      <li>Applied HTML and CSS fundamentals to build clear page structure.</li>
+                      <li>Developed the site using React and Next.js.</li>
+                      <li>Organised sections such as Navbar, About, Education, Skills, Projects and Contact.</li>
+                      <li>Planned page layout and section flow for a readable portfolio experience.</li>
+                    </ul>
+                  </div>
+
+                  <div className="modalPanel">
+                    <h3>Styling &amp; Interaction</h3>
+                    <ul>
+                      <li>Used modular styling approaches including SCSS and CSS Modules concepts.</li>
+                      <li>Implemented modal and popup logic for project details.</li>
+                      <li>Applied responsive design principles across screen sizes.</li>
+                      <li>Prepared portfolio content, project cards and GitHub repository links.</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="modalRepoList">
+                  <article className="modalRepo">
+                    <div>
+                      <h3>Personal Portfolio Website</h3>
+                      <p>
+                        This portfolio project showcasing my IT studies, technical
+                        skills, academic background and selected project work.
+                      </p>
+                      <div className="modalTags">
+                        <span>React</span>
+                        <span>Next.js</span>
+                        <span>TypeScript</span>
+                        <span>Responsive UI</span>
+                      </div>
+                    </div>
+                    <a
+                      href="https://github.com/TheCoderSamet/sametuzgoz"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View Repo ↗
+                    </a>
+                  </article>
                 </div>
               </div>
             )}
