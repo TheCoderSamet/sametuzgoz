@@ -5,66 +5,89 @@ import { useEffect, useState } from "react";
 import ViewCounter from "@/components/ViewCounter";
 
 type ModalId =
-  | "academic"
+  | "web-development"
+  | "backend-rest-api"
+  | "cloud-computing"
+  | "containerisation-devops"
   | "cyber"
   | "machine-learning"
-  | "web-development"
   | "ux-ui"
+  | "mobile-development"
+  | "academic"
   | null;
-
-const skills = [
-  "HTML & CSS",
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Node.js",
-  "Python",
-  "GitHub",
-  "Cyber Security",
-  "Machine Learning",
-];
 
 const projectCards = [
   {
-    id: "academic" as const,
+    id: "web-development" as const,
     number: "01",
+    title: "Web Development",
+    type: "PORTFOLIO & FRONT-END",
+    description:
+      "Frontend and website development work focused on building responsive, user-friendly portfolio and academic web projects.",
+  },
+  {
+    id: "backend-rest-api" as const,
+    number: "02",
+    title: "Backend & REST API Development",
+    type: "BACKEND DEVELOPMENT",
+    description:
+      "Practical backend development work focused on creating REST APIs, handling requests and connecting frontend applications with server-side logic.",
+  },
+  {
+    id: "cloud-computing" as const,
+    number: "03",
+    title: "Cloud Computing & Deployment",
+    type: "CLOUD DEPLOYMENT",
+    description:
+      "Academic and practical work focused on deploying web applications using cloud services, static hosting, CDN delivery and serverless backend concepts.",
+  },
+  {
+    id: "containerisation-devops" as const,
+    number: "04",
+    title: "Containerisation & DevOps Practice",
+    type: "DOCKER & DEVOPS",
+    description:
+      "Academic work focused on packaging applications into containers and understanding modern deployment workflows.",
+  },
+  {
+    id: "cyber" as const,
+    number: "05",
+    title: "Cyber Security",
+    type: "SECURITY PRACTICE",
+    description:
+      "Academic work focused on workplace cyber security awareness, common security risks and best practices.",
+  },
+  {
+    id: "machine-learning" as const,
+    number: "06",
+    title: "Machine Learning & AI",
+    type: "DATA & AI",
+    description:
+      "Academic machine learning work focused on understanding AI opportunities, preparing datasets and evaluating predictive models.",
+  },
+  {
+    id: "ux-ui" as const,
+    number: "07",
+    title: "User Interface & UX/UI Design",
+    type: "UX/UI DESIGN",
+    description:
+      "Study work focused on designing user-friendly digital experiences and improving website usability.",
+  },
+  {
+    id: "mobile-development" as const,
+    number: "08",
+    title: "Mobile App Development",
+    type: "MOBILE APPLICATIONS",
+    description:
+      "Academic and practical learning focused on mobile application structure, user interaction, screens, navigation and mobile-first interface design.",
+  },
+  {
+    id: "academic" as const,
+    number: "09",
     title: "Academic Projects",
     type: "APPLICATION DEVELOPMENT",
     description:
       "Selected mobile application and software projects developed during my IT learning journey.",
-  },
-  {
-    id: "web-development" as const,
-    number: "02",
-    title: "Web Development",
-    type: "PORTFOLIO & FRONT-END",
-    description:
-      "Personal portfolio website built with React and Next.js, covering page structure, components, styling, modals and responsive layout.",
-  },
-  {
-    id: "ux-ui" as const,
-    number: "03",
-    title: "User Interface & UX/UI Design",
-    type: "UX/UI DESIGN",
-    description:
-      "Academic work focused on user interface design, user experience thinking, page layout, navigation and creating a modern, user-friendly web experience.",
-  },
-  {
-    id: "cyber" as const,
-    number: "04",
-    title: "Cyber Security",
-    type: "SECURITY PRACTICE",
-    description:
-      "Academic security work covering awareness, risk analysis and practical testing activities.",
-  },
-  {
-    id: "machine-learning" as const,
-    number: "05",
-    title: "Machine Learning",
-    type: "DATA & AI",
-    description:
-      "Practical academic work involving datasets, model training and performance evaluation.",
   },
 ];
 
@@ -83,14 +106,6 @@ const education = [
     institution: "Lonsdale Institute, Melbourne",
     description:
       "Improved my English communication and academic language skills after moving to Australia, supporting my transition into further study and professional development.",
-    current: false,
-  },
-  {
-    date: "2022 — PAUSED",
-    title: "Veterinary Technician and Laboratory Sciences",
-    institution: "Anadolu University, Eskisehir",
-    description:
-      "Started this program and continued until half a semester before completion. I paused my studies after making the decision to move to Australia.",
     current: false,
   },
   {
@@ -153,9 +168,9 @@ export default function Home() {
               </h1>
 
               <p className="intro">
-                Mathematics graduate and Information Technology student based
-                in Melbourne, focused on software development, system
-                administration and cybersecurity.
+                Information Technology student based in Melbourne with a
+                Mathematics background, focused on web development, backend
+                systems, cybersecurity and machine learning.
               </p>
 
               <div className="heroActions">
@@ -207,23 +222,26 @@ export default function Home() {
             </div>
 
             <div className="aboutContent">
-              <p>
-                I completed my Bachelor&apos;s Degree in Mathematics between
-                2018 and 2022. After graduating, I moved to Australia and
-                improved my English through formal language studies.
-              </p>
+            <p>
+              I completed my Bachelor&apos;s Degree in Mathematics between 2018 and
+             2022, where I developed strong analytical thinking, logical reasoning
+             and problem-solving skills. After graduating, I moved to Australia and
+             improved my English through formal language studies.
+            </p>
 
-              <p>
-                In 2024, I began the Advanced Diploma of Information
-                Technology program. My interest in technology has led me to
-                focus on software development, system administration and
-                cybersecurity.
-              </p>
+            <p>
+              In 2024, I began the Advanced Diploma of Information Technology program.
+              Since then, I have been building practical skills in web development,
+              backend systems, cloud technologies, cybersecurity and machine learning.
+              I am a fast learner who enjoys understanding new technologies and applying
+              them to real projects.
+            </p>
 
-              <p>
-                I am a disciplined individual who enjoys learning and is
-                determined to achieve personal and professional growth.
-              </p>
+            <p>
+              I am disciplined, motivated and adaptable. I take responsibility for my
+              learning, solve problems step by step and continuously work to improve my
+              technical and professional skills.
+            </p>
 
               <div className="profileDetails">
                 <div>
@@ -240,11 +258,6 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="skills">
-                {skills.map((skill) => (
-                  <span key={skill}>{skill}</span>
-                ))}
-              </div>
             </div>
           </div>
         </section>
@@ -334,14 +347,43 @@ export default function Home() {
             </p>
 
             <div className="contactLinks">
-              <a href="mailto:samet.uzg@gmail.com">samet.uzg@gmail.com</a>
-              <a
-                href="https://github.com/TheCoderSamet"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                github.com/TheCoderSamet
+              <a href="mailto:sametuzzg@hotmail.com" className="emailLink">
+                sametuzzg@hotmail.com
               </a>
+
+              <div className="socialLinks" aria-label="Social links">
+                <a
+                  href="https://github.com/TheCoderSamet"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="socialIcon"
+                  aria-label="GitHub profile"
+                >
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.88-.01-1.73-2.78.62-3.37-1.37-3.37-1.37-.45-1.19-1.11-1.51-1.11-1.51-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.36 1.12 2.94.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.04 1.03-2.76-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05A9.3 9.3 0 0 1 12 6.96c.85 0 1.71.12 2.51.34 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.64 1.03 2.76 0 3.94-2.34 4.81-4.57 5.07.36.32.68.95.68 1.92 0 1.38-.01 2.49-.01 2.83 0 .27.18.59.69.49A10.05 10.05 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z" />
+                  </svg>
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/in/sametuzgoz/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="socialIcon"
+                  aria-label="LinkedIn profile"
+                >
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5ZM.38 8.06h4.24V23H.38V8.06ZM7.33 8.06h4.06v2.04h.06c.57-1.08 1.96-2.22 4.03-2.22 4.31 0 5.11 2.84 5.11 6.53V23h-4.24v-7.62c0-1.82-.03-4.16-2.53-4.16-2.54 0-2.93 1.99-2.93 4.03V23H7.33V8.06Z" />
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
         </section>
@@ -375,6 +417,38 @@ export default function Home() {
             >
               ×
             </button>
+
+            {activeModal === "mobile-development" && (
+              <div className="modalBody">
+                <p className="modalLabel">MOBILE APPLICATIONS</p>
+                <h2>Mobile App Development</h2>
+                <p className="modalIntro">
+                  Academic and practical learning focused on designing and
+                  developing mobile app experiences with clear screens,
+                  navigation, interaction flow and user-friendly interfaces.
+                </p>
+
+                <div className="modalColumns">
+                  <div className="modalPanel">
+                    <h3>Mobile App Skills</h3>
+                    <ul>
+                      <li>Explored mobile app structure, screen planning and user flow.</li>
+                      <li>Practised mobile-first interface thinking for app-based projects.</li>
+                      <li>Worked with mobile development concepts through React Native and Expo projects.</li>
+                    </ul>
+                  </div>
+
+                  <div className="modalPanel">
+                    <h3>Project Practice</h3>
+                    <ul>
+                      <li>Designed app features such as reminders, progress tracking and QR scanning.</li>
+                      <li>Connected mobile app ideas with authentication, data storage and user interaction.</li>
+                      <li>Improved understanding of how mobile applications solve practical user problems.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            )}
 
             {activeModal === "academic" && (
               <div className="modalBody">
@@ -458,6 +532,102 @@ export default function Home() {
               </div>
             )}
 
+            {activeModal === "backend-rest-api" && (
+              <div className="modalBody">
+                <p className="modalLabel">BACKEND DEVELOPMENT</p>
+                <h2>Backend &amp; REST API Development</h2>
+                <p className="modalIntro">
+                  Practical backend development work focused on creating REST
+                  APIs, handling requests and connecting frontend applications
+                  with server-side logic.
+                </p>
+
+                <div className="modalColumns">
+                  <div className="modalPanel">
+                    <h3>API Development</h3>
+                    <ul>
+                      <li>Built basic REST API endpoints using Node.js and Express.</li>
+                      <li>Practised route structure, request handling and JSON responses.</li>
+                      <li>Tested API requests and responses during development.</li>
+                    </ul>
+                  </div>
+
+                  <div className="modalPanel">
+                    <h3>Frontend Connection</h3>
+                    <ul>
+                      <li>Connected frontend features with backend logic.</li>
+                      <li>Explored how client-side pages communicate with server-side APIs.</li>
+                      <li>Learned deployment basics for backend and API projects.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {activeModal === "cloud-computing" && (
+              <div className="modalBody">
+                <p className="modalLabel">CLOUD DEPLOYMENT</p>
+                <h2>Cloud Computing &amp; Deployment</h2>
+                <p className="modalIntro">
+                  Academic and practical work focused on deploying web
+                  applications using cloud services, static hosting, CDN
+                  delivery and serverless backend concepts.
+                </p>
+
+                <div className="modalColumns">
+                  <div className="modalPanel">
+                    <h3>Hosting &amp; Delivery</h3>
+                    <ul>
+                      <li>Hosted a static portfolio website using AWS S3 and CloudFront.</li>
+                      <li>Learned CDN, HTTPS delivery and static website hosting concepts.</li>
+                      <li>Practised cloud service configuration and deployment troubleshooting.</li>
+                    </ul>
+                  </div>
+
+                  <div className="modalPanel">
+                    <h3>Serverless Concepts</h3>
+                    <ul>
+                      <li>Explored serverless backend concepts using API Gateway and Lambda.</li>
+                      <li>Practised using DynamoDB concepts for simple cloud data storage.</li>
+                      <li>Connected cloud services to portfolio and web application workflows.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {activeModal === "containerisation-devops" && (
+              <div className="modalBody">
+                <p className="modalLabel">DOCKER &amp; DEVOPS</p>
+                <h2>Containerisation &amp; DevOps Practice</h2>
+                <p className="modalIntro">
+                  Academic work focused on packaging applications into
+                  containers and understanding modern deployment workflows.
+                </p>
+
+                <div className="modalColumns">
+                  <div className="modalPanel">
+                    <h3>Containerisation</h3>
+                    <ul>
+                      <li>Created Docker images for simple web and API applications.</li>
+                      <li>Used Dockerfile, image tags, container ports and runtime testing.</li>
+                      <li>Practised troubleshooting container build and execution issues.</li>
+                    </ul>
+                  </div>
+
+                  <div className="modalPanel">
+                    <h3>Deployment Workflow</h3>
+                    <ul>
+                      <li>Learned basic DevOps concepts including portability and consistency.</li>
+                      <li>Explored how containers support repeatable development environments.</li>
+                      <li>Practised checking running containers, ports and application output.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            )}
+
+
             {activeModal === "cyber" && (
               <div className="modalBody">
                 <p className="modalLabel">CYBER SECURITY</p>
@@ -493,10 +663,11 @@ export default function Home() {
             {activeModal === "machine-learning" && (
               <div className="modalBody">
                 <p className="modalLabel">MACHINE LEARNING</p>
-                <h2>Machine Learning Model</h2>
+                <h2>Machine Learning &amp; AI</h2>
                 <p className="modalIntro">
-                  Academic data and AI work focused on training models and
-                  evaluating prediction results through practical Python tasks.
+                  Academic machine learning work focused on understanding AI
+                  opportunities, preparing datasets and evaluating predictive
+                  models through practical Python tasks.
                 </p>
 
                 <div className="modalColumns">

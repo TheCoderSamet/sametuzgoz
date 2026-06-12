@@ -365,12 +365,12 @@ a {
 .projectGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 17px;
+  gap: 14px;
 }
 
 .projectCard {
-  height: 330px;
-  padding: 30px 28px;
+  height: 285px;
+  padding: 24px 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -412,23 +412,23 @@ a {
 
 .projectType {
   color: var(--accent);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
-  letter-spacing: 1.6px;
-  margin-bottom: 16px;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
 }
 
 .projectCard h3 {
-  font-size: 27px;
-  line-height: 1.22;
-  letter-spacing: -0.8px;
-  margin-bottom: 16px;
+  font-size: 24px;
+  line-height: 1.2;
+  letter-spacing: -0.7px;
+  margin-bottom: 12px;
 }
 
 .projectText {
   color: var(--muted);
-  font-size: 15px;
-  line-height: 1.68;
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 /* Modal */
@@ -735,13 +735,47 @@ a {
 .contactLinks {
   display: flex;
   justify-content: center;
-  gap: 36px;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
 }
 
-.contactLinks a {
+.emailLink {
   color: var(--accent);
   font-size: 17px;
   font-weight: 600;
+}
+
+.socialLinks {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.socialIcon {
+  width: 46px;
+  height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--foreground);
+  transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.socialIcon:hover {
+  color: #0b0d12;
+  background: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.socialIcon svg {
+  width: 22px;
+  height: 22px;
+  display: block;
 }
 
 /* Footer */
@@ -823,6 +857,15 @@ a {
     align-items: flex-start;
   }
 
+  .socialLinks {
+    gap: 12px;
+  }
+
+  .socialIcon {
+    width: 44px;
+    height: 44px;
+  }
+
   .visualBorder {
     height: 360px;
   }
@@ -876,8 +919,8 @@ a {
 @media (max-width: 680px) {
   .projectCard {
     height: auto;
-    min-height: 285px;
-    padding: 25px 22px;
+    min-height: 245px;
+    padding: 22px 20px;
   }
 
   .modalBackdrop {
